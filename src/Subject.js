@@ -20,7 +20,7 @@ class Subject extends Component {
         className={`card ${selected ? 'border-primary' : ''}`}
       >
       <img className="card-img-top"
-        src={`${app}/animals/${animal.id}.jpg`}
+        src={`${app}/docs/${animal.id}.jpg`}
         alt={animal.name}
       />
       <div className="card-body">
@@ -32,7 +32,7 @@ class Subject extends Component {
           :
           <a
             className='btn btn-primary btn-block'
-            href={`${window.location.origin}/kingdom/${currentUsername}?add=${app}/kingdom/${username}`}
+            href={`${window.location.origin}/user/${currentUsername}?add=${app}/user/${username}`}
           >Add to my kingdom
           </a>
         }

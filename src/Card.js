@@ -18,7 +18,6 @@ class Card extends Component {
       <div className="card-body">
         <h4 className="card-title">{item.name}</h4>
         <p className="card-text">{item.superpower}</p>
-        <button className='btn btn-primary btn-block' disabled={selected}>{ selected ? 'Selected' : 'Select' }</button>
       </div>
     </div>
     )

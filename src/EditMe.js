@@ -34,7 +34,6 @@ class EditMe extends Component {
     let myTerritory = null
     if (me) {
       myAnimal = this.props.me.animal
-      myTerritory = this.props.me.territory
     }
     const selectedAnimal = this.state.selectedAnimal
     const selectedTerritory = this.state.selectedTerritory
@@ -48,9 +47,8 @@ class EditMe extends Component {
         <h3>Your Passport</h3>
         <div className="row card-deck">
         { ANIMALS.map((animal, index) => {
-          const selected = myAnimal && myAnimal.id === animal.id
           return (
-            <Card path='/animals/' key={index} item={animal} select={this.selectAnimal} selected={selected} />
+            <Card path='/docs/' key={index} item={animal} />
                 )
           })
         }
@@ -58,9 +56,8 @@ class EditMe extends Component {
         <h3 className="select-territory">Your Travel VISAs</h3>
         <div className="card-deck">
         { TERRITORIES.map((territory, index) => {
-          const selected = myTerritory && myTerritory.id === territory.id
           return (
-            <Card path='/territories/' key={index} item={territory} select={this.selectTerritory} selected={selected} />
+            <Card path='/visas/' key={index} item={territory}/>
                 )
           })
         }
@@ -68,7 +65,7 @@ class EditMe extends Component {
         <div className="container row">
           <div className="col-lg-12 done">
             <p>
-              <Link to={`/kingdom/${username}`} className="btn btn-primary" disabled={!completed}>Done</Link>
+              <Link to={`/user/${username}`} className="btn btn-primary" disabled={!completed}>Done</Link>
             </p>
           </div>
         </div>

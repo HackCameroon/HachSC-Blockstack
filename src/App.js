@@ -20,7 +20,7 @@ class App extends Component {
         if(!userData.username) {
           throw new Error('This app requires a username.')
         }
-        window.location = `/kingdom/${userData.username}`
+        window.location = `/user/${userData.username}`
       })
     }
   }
@@ -31,7 +31,9 @@ class App extends Component {
           {this.userSession.isUserSignedIn() ?
             <SignedIn />
           :
+
             <Landing />
+
           }
       </main>
     );

@@ -10,12 +10,12 @@ export function jsonCopy(object) {
  * and domain of the kingdom
  *
  * Accepts URLs of the format:
- * https://example.com/kingdom/username.id
+ * https://example.com/user/username.id
  * @param  {string} url
  * @return {Object} an Object with keys `app` and `username`
  */
 export function subjectFromKingdomUrl(url) {
-  const tokens = url.split('/kingdom')
+  const tokens = url.split('/user')
   const app = tokens[0]
   const username = tokens[1].split('/')[1]
   return {

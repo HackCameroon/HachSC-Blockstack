@@ -76,7 +76,7 @@ class SignedIn extends Component {
 
     if(window.location.pathname === '/') {
       return (
-        <Redirect to={`/kingdom/${username}`} />
+        <Redirect to={`/user/${username}`} />
       )
     }
 
@@ -86,18 +86,18 @@ class SignedIn extends Component {
       <NavBar username={username} signOut={this.signOut}/>
       <Switch>
               <Route
-                path='/animals'
+                path='/docs'
                 render={
                   routeProps => <OptionsList
-                  type="animals"
+                  type="docs"
                   {...routeProps} />
                 }
               />
               <Route
-                path='/territories'
+                path='/visas'
                 render={
                   routeProps => <OptionsList
-                  type="territories"
+                  type="visas"
                   {...routeProps} />
                 }
               />
@@ -105,7 +105,7 @@ class SignedIn extends Component {
                 path='/others'
                 render={
                   routeProps => <OtherKingdoms
-                  type="territories"
+                  type="visas"
                   {...routeProps} />
                 }
               />
@@ -120,19 +120,19 @@ class SignedIn extends Component {
                 }
               />
               <Route
-                path={`/kingdom/${username}`}
+                path={`/user/${username}`}
                 render={
                   routeProps => <Kingdom
                   myKingdom={true}
                   protocol={window.location.protocol}
                   ruler={username}
                   currentUsername={username}
-                  realm={window.location.origin.split('//')[1]}
+                  //realm={window.location.origin.split('//')[1]}
                   {...routeProps} />
                 }
               />
               <Route
-                path='/kingdom/:protocol/:realm/:ruler'
+                path='/user/:protocol/:realm/:ruler'
                 render={
                   routeProps => <Kingdom
                   myKingdom={false}

@@ -7,12 +7,12 @@ class OptionsList extends Component {
   render() {
     const type = this.props.type
     let options = ANIMALS
-    if (type === 'territories') {
+    if (type === 'visas') {
       options = TERRITORIES
     }
     return (
       <div className="OptionsList container">
-          <h2>Your Identification Documents</h2>
+          <h2>Your Documents</h2>
           <div className="card-deck">
             {options.map((option, index) => {
             return (

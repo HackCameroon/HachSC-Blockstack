@@ -121,62 +121,23 @@ class Kingdom extends Component {
     return (
       <div className="Kingdom">
         <div className="row">
-          <div
-            className="col-lg-12 territory"
-            style={{backgroundImage: `url('${app}/territories/${rulerTerritory.id}.jpg')`}}
-          >
-          { rulerAnimal && rulerAnimal.name ?
-            <img className="rounded-circle" src={`${app}/animals/${rulerAnimal.id}.jpg`} alt={rulerAnimal.name} />
-            :
-            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="The Ruler" />
-          }
+          <div className="col-lg-12 territory">
+            <img  className="rounded-circle" src='../docs/dog.jpg'/>
           </div>
         </div>
         <div className="row ruler">
           <div className="col-lg-12">
             <h2>{username}</h2>
-            {rulerAnimal ?
-              <p><a href={`${EXPLORER_URL}/name/${username}`} target="_blank" rel="noopener noreferrer">{username}</a> is a {rulerAnimal.name} that rules over the {rulerTerritory.name}.</p>
-              :
-              <p>{username} is an unknown animal that hails from an unknown land.</p>
-            }
+            <p><a href={`${EXPLORER_URL}/name/${username}`} target="_blank" rel="noopener noreferrer">My Blockstack Explorer</a> </p>
             <p>
-            {mine ? <Link className="btn btn-primary" to="/me" role="button">Edit my animal</Link>
+            {mine ? <Link className="btn btn-primary" to="/me" role="button">See my Documents</Link>
             : <a
               className='btn btn-primary'
-              href={`${window.location.origin}/kingdom/${currentUsername}?add=${app}/kingdom/${username}`}
+              href={`${window.location.origin}/user/${currentUsername}?add=${app}/user/${username}`}
             >Add ruler to my kingdom
             </a>}
             </p>
-            <div className="container">
-              <h2>Subjects</h2>
-              {mine ?
-                <div className="row justify-content-center">
-                  <div
-                    id="addSubject"
-                    className="add-frame col-lg-8"
-                    style={{borderColor: (clickAdd ? 'red' : '#f8f9fa')}}
-                  >
-                    <form onSubmit={this.addSubject} className="input-group">
-                      <input
-                        className="form-control"
-                        type="url"
-                        onChange={this.handleChange}
-                        value={this.state.value}
-                        required
-                        placeholder="https://example.com/kingdom/ruler.id"
-                      />
-                      <div className="input-group-append">
-                        <input type="submit" className="btn btn-primary" value="Add subject"/>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                :
-                null
-              }
-              <div className="card-deck">
+
               {subjects.map((subject, index) => {
                 return (
                   <Subject
@@ -190,8 +151,7 @@ class Kingdom extends Component {
                       )
                     })
               }
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

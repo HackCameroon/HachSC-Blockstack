@@ -14,18 +14,21 @@ class Landing extends Component {
     e.preventDefault()
     this.userSession.redirectToSignIn()
   }
-
+/* background: #161415 url(../images/background1.jpg) no-repeat top center; */
   render() {
     return (
       <div className="Landing">
         <div className="form-signin">
           <h1 className="h1 mb-3 font-weight-normal">Travel Companion</h1>
+
           <button
             className="btn btn-lg btn-primary btn-block"
             onClick={this.signIn.bind(this)}>Sign in with Blockstack
           </button>
+
         </div>
       </div>
+
     );
   }
 }

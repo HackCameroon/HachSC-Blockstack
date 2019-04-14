@@ -13,15 +13,15 @@ class NavBar extends Component {
 <div className="collapse navbar-collapse" id="navbarsExampleDefault">
   <ul className="navbar-nav mr-auto">
     <li className="nav-item">
-      <Link className="nav-link" to={`/kingdom/${username}`}>Your Profile</Link>
+      <Link className="nav-link" to={`/user/${username}`}>Profile</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link" to="/animals">Id Documents</Link>
+      <Link className="nav-link" to="/docs">Id Documents</Link>
     </li>
     <li className="nav-item">
-      <Link className="nav-link" to="/territories">Travel VISAs</Link>
+      <Link className="nav-link" to="/visas">VISAs</Link>
     </li>
-     
+
   </ul>
 </div>
 <ul className="navbar-nav mr-auto">
