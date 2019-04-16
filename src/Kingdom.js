@@ -121,8 +121,7 @@ class Kingdom extends Component {
     return (
       <div className="Kingdom">
         <div className="row">
-          <div className="col-lg-12 territory praveen"
-          >
+          <div className="col-lg-12 territory praveen">
             <img  className="rounded-circle" src='../docs/dog.jpg'/>
           </div>
         </div>
